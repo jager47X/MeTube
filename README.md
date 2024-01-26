@@ -11,9 +11,6 @@
   - [Uploading Videos](#uploading-videos)
   - [Browsing and Watching Videos](#browsing-and-watching-videos)
 - [Database Setup](#database-setup)
-- [Architecture](#architecture)
-  - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
