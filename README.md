@@ -39,7 +39,15 @@ Before you begin, ensure you have the following prerequisites installed:
 ### Installation
 Build Instruction: use `npm install` for build instructions and `npm start` for the run instructions.
 
-Link to Web Application: [localhost:3000](http://localhost:3000)
+
+defalut value of Database user information[.env]:
+[DB_HOST="localhost"]
+[DB_NAME="metubeDB"]
+[DB_USER="root"]
+[DB_PASSWORD="password"]
+[PORT=3000]
+Link to Web Application:
+[localhost:3000](http://localhost:3000)
 
 ## Usage
 ### User Registration
