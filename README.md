@@ -13,7 +13,6 @@
 - [Database Setup](#database-setup)
 - [Architecture](#architecture)
   - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
