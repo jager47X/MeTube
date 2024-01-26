@@ -1,0 +1,11 @@
+<main class="form-main">
+    <div class="profile">
+        <h4>{{user.username}}</h4>
+        <h6>{{user.email}}</h6>
+        <div class="profile-posts photo-gallery">
+            {{#each posts}}
+                {{>profilecard this}}
+            {{/each}}
+        </div>
+    </div>
+</main>

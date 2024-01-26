@@ -1,0 +1,36 @@
+<div class="header">
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">MeTube</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {{#unless isLoggedIn}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Register</a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/postvideo">Post a video</a>
+                        </li>
+                    {{/unless}}
+                </ul>
+                <form class="d-flex" action="/posts/search"method="GET" enctype="application/x-www-form-urlencoded">
+                    <input class="form-control me-2" type="text" name="searchValue" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+
+                {{#if isLoggedIn}}
+                    {{> userdropdown}}
+
+                {{else}}
+                    <a class="m-2 btn btn-outline-light" href="/Login">Login</a>
+                {{/if}}
+
+            </div>
+        </div>
+    </nav>
+</div>

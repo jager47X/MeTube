@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:site_name" content="CSC 317 Website">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="../favicon.ico">
+    <script defer src="../js/validation.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <title>Registration</title>
+</head>
+<body>
+<div class="body">
+    <div class="header">
+        <header>
+            <a href="index.html"><h1 class="title">MeTube</h1></a>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="../../views/login.hbs" class="nav-button">Login</a></li>
+                <li><a href="registration.html" class="nav-button">Register</a></li>
+                <li><a href="postvideo.html" class="nav-button">Post a video</a></li>
+                <li><a href="viewpost.html" class="nav-button">View a post</a></li>
+                <li><a href="profile.html" class="nav-button">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="form-main">
+        <div class="login-form">
+            <div>
+                <h2>Registration Form</h2>
+            </div>
+            <form id="reg-form" method="POST">
+                <div class="username">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                    <div class="username-test invalid-text">
+                        <h5 id="username-begin">❌ Username must begin with a character.</h5>
+                        <h5 id="username-length">❌ Username must be at least 3 characters long.</h5>
+                        <h5 id="username-alphanumeric">❌ Username must be alphanumeric characters.</h5>
+                    </div>
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <div class="password-test invalid-text">
+                        <h5 id="password-length">❌ Password must be at least 8 characters long.</h5>
+                        <h5 id="password-upper">❌ Password must contain at least 1 upper case letter.</h5>
+                        <h5 id="password-number">❌ Password must contain at least 1 number.</h5>
+                        <h5 id="password-special">❌ Password must contain at least 1 special characters.</h5>
+                    </div>
+                </div>
+
+                <div class="confirm-password">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"
+                           required>
+                    <div class="confirm-password-test invalid-text">
+                        <h5 id="password-match">❌ Passwords do not match.</h5>
+                    </div>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="age" name="age" required>
+                    <label for="age">Are you 13+ years of age?</label>
+                    <br>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="tos" name="tos" required>
+                    <label for="tos">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                        Rules</a></label>
+                    <br>
+
+                </div>
+                <button class="nav-button" type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer id="footer">
+        Yuto Mori &copy; 2023
+     </footer>
+</div>
+</body>
+</html>

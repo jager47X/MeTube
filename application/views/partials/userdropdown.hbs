@@ -1,0 +1,14 @@
+<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Hi, {{user.username}}
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="/users/profile/{{user.userId}}">Profile</a>
+   
+     <form action="/users/logout" method="post">
+      <input type="hidden" value="{{csrf}}">
+    <button class="dropdown-item" type="submit">Log out</button>
+     </form>
+  </div>
+</div>

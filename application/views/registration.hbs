@@ -1,0 +1,50 @@
+<main class="form-main">
+    <div class="login-form">
+        <div>
+            <h3>Registration Form</h3>
+        </div>
+        <form id="reg-form" action="/users/register" method="post" enctype="application/x-www-form-urlencoded">
+
+            <div class="username">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username" required>
+
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                
+            </div>
+
+            <div class="confirm-password">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"
+                       required>
+               
+            </div>
+            <div class="profileImg">
+                <label for="profileImg">Profile image</label>
+                <input type="text" name="profileImg" id="profileImg" placeholder="Profile image link" required>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="age" name="age" required>
+                <label for="age">Are you 13+ years of age?</label>
+                <br>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="tos" name="tos" required>
+                <label for="tos">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                    Rules</a></label>
+                <br>
+
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </form>
+    </div>
+</main>

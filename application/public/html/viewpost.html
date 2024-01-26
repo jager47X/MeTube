@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:site_name" content="CSC 317 Website">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>View Post</title>
+</head>
+<body>
+<div class="body">
+    <div class="header">
+        <header>
+            <a href="index.html"><h1 class="title">MeTube</h1></a>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="../../views/login.hbs" class="nav-button">Login</a></li>
+                <li><a href="registration.html" class="nav-button">Register</a></li>
+                <li><a href="postvideo.html" class="nav-button">Post a video</a></li>
+                <li><a href="viewpost.html" class="nav-button">View a post</a></li>
+                <li><a href="profile.html" class="nav-button">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main class="form-main">
+        <div class="post">
+            <div class="post-header">
+                <h2 class="post-title">Hello world</h2>
+                <p>Posted by <span class="author">Yuto Mori</span> on
+                    <time class="date" datetime="2023-05-14T13:00:00">May 14, 2023</time>
+                </p>
+            </div>
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <section class="comments">
+                <h2>Comments</h2>
+                <div class="comment">
+                    <p><strong>Yuto</strong></p>
+                    <p>great:) </p>
+                </div>
+
+                <div class="comment">
+                    <p><strong>Mori</strong></p>
+                    <p>Awesome👍</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer">
+        Yuto Mori &copy; 2023
+     </footer>
+</div>
+</body>
+</html>

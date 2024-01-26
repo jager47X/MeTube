@@ -1,0 +1,31 @@
+<main class="form-main">
+    <div class="login-form">
+        <div>
+            <h3>Post a Video</h3>
+        </div>
+        <form action="/posts/create" method="POST" enctype="multipart/form-data">
+            <div class="form-title">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" placeholder="Title" required><br>
+            </div>
+
+            <div class="description">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" placeholder="Description" required><br>
+            </div>
+
+            <div class="video">
+                <label for="video">Video</label>
+                <input type="file" name="uploadVideo" id="video" accept="video/*" required><br>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="policy" name="policy" required>
+                <label for="policy">Do you accept user's policy?</label>
+                <br>
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </form>
+    </div>
+</main>

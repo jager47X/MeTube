@@ -1,0 +1,12 @@
+<div class="card m-3 " style="width: 12rem;">
+    <img class="card-img-top" src="/{{thumbnail}}"  alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <div class="d-flex">
+        <a href="/posts/{{id}}" class="m-2 btn btn-outline-primary">Link</a>
+            <form method="POST" action="/posts/delete/{{id}}">
+                <button type="submit" class="m-2 btn btn-outline-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>

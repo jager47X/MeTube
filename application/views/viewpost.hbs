@@ -1,0 +1,83 @@
+<main class="form-main">
+
+    <div class="post">
+        <div class="post-header">
+            <h2 class="post-title">{{currentPost.title}}</h2>
+            <p>Posted by <span class="author">{{currentPost.username}}</span> on
+                <time class="date" datetime="{{currentPost.createdAt}}">{{formatDateString
+                        currentPost.createdAt}}</time>
+            </p>
+        </div>
+        <video controls>
+            <source src="/{{currentPost.video}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h5>{{currentPost.description}}</h5>
+        <div class="container mt-5 comments">
+            <div class="card">
+                <div class="card-header">
+                    Comments
+                </div>
+                <div class="card-body" id="comments">
+                    {{#each currentPost.comments}}
+                        {{>comment this}}
+                    {{/each}}
+                </div>
+            </div>
+            {{#if isLoggedIn}}
+                <div class="pt-3">
+                    <textarea class="form-control" id="comment-text" name="comment-text" rows="3" required></textarea>
+                    <button class="btn btn-primary mt-2 " data-postId="{{currentPost.id}}" id="comment-button"><i
+                            id="test2"
+                            class="fa fa-comment "></i>
+                    </button>
+                </div>
+            {{/if}}
+        </div>
+
+    </div>
+    <script>
+        document.getElementById("comment-button").addEventListener("click", function (ev) {
+            let commentText = document.getElementById("comment-text").value;
+            console.log(commentText)
+            if (!commentText) return;
+            var postId = ev.currentTarget.dataset.postid;
+            fetch("/comments/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    postId: postId,
+                    comment: commentText
+                })
+            }).then(response => {
+                return response.json()
+            })
+                    .then(data => {
+                        console.log(data);
+                        var comments = document.getElementById("comments");
+                        let commentFragment = document.createElement('template');
+                        commentFragment.innerHTML =
+                                `<div>
+<div class="comment-name d-flex pb-2">
+    <img class="mr-3 rounded-circle" width=50px height=50px  src="${data.profileImg}"
+         alt="Generic placeholder image">
+    <h5 class="mt-0 px-2 d-flex align-items-center">${data.username}</h5>
+</div><h6 style="font-size:0.7rem">${(new Date()).toLocaleString("en-us", {
+                                    dateStyle: "long",
+                                    timeStyle: "medium"
+                                })}</h6>
+<p style="font-size:1.2rem">${data.commentText}</p>
+
+<hr>
+</div>`;
+                        comments.append(commentFragment.content.firstChild)
+                        document.getElementById("comment-text").value = "";
+
+                    })
+        });
+
+    </script>
+</main>
