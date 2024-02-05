@@ -21,10 +21,21 @@ body {
     color: black;
     text-align: center;
 }
-
+.nav-link {
+    color: rgb(0, 0, 0);
+}
+.navbar-brand {
+    color: rgb(13, 13, 13);
+}
+.btn-outline-light {
+    color: rgb(7, 0, 34);
+}
+ .btn-outline-primary {
+    color: #000;
+ }
 .header {
 
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(221, 221, 221);
     color: rgb(13, 13, 13);
     justify-content: space-between;
     text-align: center;
@@ -33,7 +44,7 @@ body {
 }
 
 header {
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(167, 134, 0);
     color: rgb(255, 255, 255);
     text-align: center;
     /*outline*/
@@ -318,9 +329,8 @@ video {
 }
 a{
   text-decoration: none;
-  color: rgb(255, 116, 2);
+  color: green;
   font-weight: bold;
-
 }
 .alert-danger{
 color:red;

@@ -25,17 +25,22 @@ async function getConnection() {
 }
 
 async function makeDatabase(connection) {
-  //TODO make sure to change yourdbnamehere
-  const [result, _] = await connection.query(
-    `CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME};`
-  );
-  if (result && result.warningStatus > 0) {
-    const [warningResult, _] = await connection.query("SHOW WARNINGS");
-    displayWarningMessage(warningResult[0]);
-  } else {
-    console.log("Created Database!");
+  try {
+    const [result, _] = await connection.query(
+      `CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME};`
+    );
+
+    if (result && result.warningStatus > 0) {
+      const [warningResult, _] = await connection.query("SHOW WARNINGS");
+      displayWarningMessage(warningResult[0]);
+    } else {
+      console.log("Created Database:", process.env.DB_NAME);
+    }
+  } catch (error) {
+    console.error("Error creating database:", error);
   }
 }
+
 
 async function makeUsersTable(connection) {
   const [result, _] = await connection.query(
